@@ -14,7 +14,7 @@ export default class VideoContainer extends React.Component {
 	render() {
 		return (
 			<section>
-				<h2>You Videos</h2>
+				<h2>Your Videos</h2>
 				{this.listRender()}
 			</section>
 		);
