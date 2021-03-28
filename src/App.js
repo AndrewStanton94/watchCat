@@ -44,7 +44,7 @@ class App extends React.Component {
 						bar to save it.
 					</p>
 					<div className="flex flex-center">
-						<a class="button" href={bookmarkletText}>
+						<a className="button" href={bookmarkletText}>
 							YouTube Watch later bookmarklet
 						</a>
 					</div>

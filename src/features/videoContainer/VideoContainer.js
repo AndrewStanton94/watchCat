@@ -1,21 +1,51 @@
 import React from 'react';
+import VideoList from '../videoList/VideoList'
 
 export default class VideoContainer extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
+	processInput(videoData) {
+		if (!videoData) {
+			return undefined;
+		}
+		const initialValue = {
+			channels: {},
+			videos: [],
+		};
+		const processedData = videoData.reduce((acc, current, _, _1) => {
+			const { channels } = acc;
+			const channelNames = Object.keys(channels);
+			const { channelName, title } = current;
+			if (channelNames.includes(channelName)) {
+				channels[channelName].push(title);
+			} else {
+				channels[channelName] = [title];
+			}
+
+			acc.channels = channels;
+			acc.videos.push(current);
+			return acc;
+		}, initialValue);
+
+		return processedData;
 	}
-	listRender() {
-		const { videos } = this.props;
-		if (videos) {
-			return videos.map((vid, i) => <p key={i}>{vid.title}</p>);
+
+	listRender(list = [], show = false) {
+		if (list) {
+			return list.map((item, i) => (
+				<p key={i}>{show ? item[show] : item}</p>
+			));
 		}
 	}
 	render() {
+		const processedInputs  = this.processInput(this.props.videos);
+		if (!processedInputs) {
+			return null;
+		}
+		const { videos, channels } = processedInputs;
 		return (
 			<section>
-				<h2>Your Videos</h2>
-				{this.listRender()}
+				<VideoList videos={videos} />
+				<h2>Your Channels</h2>
+				{this.listRender(Object.keys(channels))}
 			</section>
 		);
 	}
