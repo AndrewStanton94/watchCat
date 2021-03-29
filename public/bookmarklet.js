@@ -14,11 +14,33 @@
 			innerText: channelName,
 			href: channelLink,
 		} = videoLinks.shift();
-		console.log(durationText);
-		const duration = durationText.split('\n')[0];
-		console.log(duration);
+		const durationComponents = durationText.split('\n');
 
-		videoData.push({ duration, title, href, channelName, channelLink });
+		let duration,
+			watched = false;
+
+		switch (durationComponents.length) {
+			case 2:
+				duration = durationComponents[0];
+				break;
+
+			case 3:
+				duration = durationComponents[1];
+				watched = true;
+				break;
+
+			default:
+				break;
+		}
+
+		videoData.push({
+			duration,
+			watched,
+			title,
+			href,
+			channelName,
+			channelLink,
+		});
 	};
 
 	while (videoLinks.length) {
