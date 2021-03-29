@@ -8,18 +8,7 @@
 
 	const videoData = [];
 
-	// Aggregates the information from the 3 links per video
-	const extractData = (videoLinks) => {
-		// Duration from preview link
-		const { innerText: durationText } = videoLinks.shift();
-		// Title and URL from video name
-		const { innerText: title, href } = videoLinks.shift();
-		// Channel name and URL
-		const {
-			innerText: channelName,
-			href: channelLink,
-		} = videoLinks.shift();
-
+	const prepareVideoInfo = (durationText, title, href) => {
 		let duration,
 			watched = false;
 
@@ -39,13 +28,41 @@
 				break;
 		}
 
-		videoData.push({
+		return {
 			duration,
 			watched,
 			title,
-			href,
-			channelName,
-			channelLink,
+			id: new URL(href).searchParams.get('v'),
+		};
+	};
+
+	const prepareChannel = (channelName, channelLink) => {
+		const [type, id] = channelLink
+			.replace('https://www.youtube.com/', '')
+			.split('/');
+
+		return {
+			name: channelName,
+			type,
+			id,
+		};
+	};
+
+	// Aggregates the information from the 3 links per video
+	const extractData = (videoLinks) => {
+		// Duration from preview link
+		const { innerText: durationText } = videoLinks.shift();
+		// Title and URL from video name
+		const { innerText: title, href } = videoLinks.shift();
+		// Channel name and URL
+		const {
+			innerText: channelName,
+			href: channelLink,
+		} = videoLinks.shift();
+
+		videoData.push({
+			video: prepareVideoInfo(durationText, title, href),
+			channel: prepareChannel(channelName, channelLink),
 		});
 	};
 
