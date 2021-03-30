@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoList from '../videoList/VideoList'
+import VideoList from '../videoList/VideoList';
 
 export default class VideoContainer extends React.Component {
 	processInput(videoData) {
@@ -13,11 +13,13 @@ export default class VideoContainer extends React.Component {
 		const processedData = videoData.reduce((acc, current) => {
 			const { channels } = acc;
 			const channelNames = Object.keys(channels);
-			const { channelName, title } = current;
-			if (channelNames.includes(channelName)) {
-				channels[channelName].push(title);
+			const { video, channel } = current;
+			const { title } = video;
+			const { name } = channel;
+			if (channelNames.includes(name)) {
+				channels[name].push(title);
 			} else {
-				channels[channelName] = [title];
+				channels[name] = [title];
 			}
 
 			acc.channels = channels;
@@ -36,7 +38,7 @@ export default class VideoContainer extends React.Component {
 		}
 	}
 	render() {
-		const processedInputs  = this.processInput(this.props.videos);
+		const processedInputs = this.processInput(this.props.videos);
 		if (!processedInputs) {
 			return null;
 		}

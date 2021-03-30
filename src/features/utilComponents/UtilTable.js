@@ -8,19 +8,19 @@ export default class UtilTable extends React.Component {
 	renderRow(object, keys) {
 		return (
 			<tr>
-				{keys.map((key) => (
-					<td>{object[key]}</td>
+				{keys.map((key, i) => (
+					<td key={i}>{object[key]}</td>
 				))}
 			</tr>
 		);
 	}
 
-	renderHeaderRow(keys) {
-		return keys.map((key) => <th>{key}</th>);
+	renderHeaderRow() {
+		return this.props.headers.map((header) => <th>{header}</th>);
 	}
 
-	renderTHeadAndTFoot(keys) {
-		const headerRowItems = this.renderHeaderRow(keys);
+	renderTHeadAndTFoot() {
+		const headerRowItems = this.renderHeaderRow();
 		return (
 			<>
 				<thead>{headerRowItems}</thead>
