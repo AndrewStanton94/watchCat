@@ -10,7 +10,7 @@ export default class VideoContainer extends React.Component {
 			channels: {},
 			videos: [],
 		};
-		const processedData = videoData.reduce((acc, current, _, _1) => {
+		const processedData = videoData.reduce((acc, current) => {
 			const { channels } = acc;
 			const channelNames = Object.keys(channels);
 			const { channelName, title } = current;
