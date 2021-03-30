@@ -4,7 +4,6 @@ import UtilTable from '../utilComponents/UtilTable';
 export default class VideoList extends React.Component {
 	prepareData(videos) {
 		return videos.map(({ video, channel }) => {
-			console.log({ ...video, channel });
 			return [
 				<a href={video.id}>{video.title}</a>,
 				<p>{video.duration}</p>,

@@ -38,10 +38,7 @@ export default class UtilTable extends React.Component {
 	}
 
 	render() {
-		const obj = this.props.data[0];
-		console.log(obj);
 		const keys = this.attributeNames();
-		console.log(keys);
 		return (
 			<table>
 				{this.renderTHeadAndTFoot(keys)}
