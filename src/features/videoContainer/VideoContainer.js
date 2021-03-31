@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoList from '../videoList/VideoList';
+import ChannelContainer from '../channelContainer/ChannelContainer';
 
 export default class VideoContainer extends React.Component {
 	processInput(videoData) {
@@ -30,13 +31,6 @@ export default class VideoContainer extends React.Component {
 		return processedData;
 	}
 
-	listRender(list = [], show = false) {
-		if (list) {
-			return list.map((item, i) => (
-				<p key={i}>{show ? item[show] : item}</p>
-			));
-		}
-	}
 	render() {
 		const processedInputs = this.processInput(this.props.videos);
 		if (!processedInputs) {
@@ -44,11 +38,10 @@ export default class VideoContainer extends React.Component {
 		}
 		const { videos, channels } = processedInputs;
 		return (
-			<section>
+			<>
 				<VideoList videos={videos} />
-				<h2>Your Channels</h2>
-				{this.listRender(Object.keys(channels))}
-			</section>
+				<ChannelContainer channels={channels} />
+			</>
 		);
 	}
 }
