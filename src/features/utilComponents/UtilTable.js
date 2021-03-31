@@ -23,8 +23,12 @@ export default class UtilTable extends React.Component {
 		const headerRowItems = this.renderHeaderRow();
 		return (
 			<>
-				<thead>{headerRowItems}</thead>
-				<tfoot>{headerRowItems}</tfoot>
+				<thead>
+					<tr>{headerRowItems}</tr>
+				</thead>
+				<tfoot>
+					<tr>{headerRowItems}</tr>
+				</tfoot>
 			</>
 		);
 	}
