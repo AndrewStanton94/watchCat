@@ -54,6 +54,23 @@ ol {
 	padding-left: 4rem;
 }
 
+table {
+	border-spacing: 1rem;
+}
+
+:is(thead, tfoot) th {
+	text-align: left;
+	padding: 1rem 0;
+}
+
+thead th {
+	border-bottom: 2px solid var(--col-light);
+}
+
+tfoot th {
+	border-top: 2px solid var(--col-light);
+}
+
 .button {
 	margin: 2rem 0;
 	padding: 1rem 2rem;
