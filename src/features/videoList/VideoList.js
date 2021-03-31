@@ -1,13 +1,16 @@
 import React from 'react';
 import UtilTable from '../utilComponents/UtilTable';
+import VideoLink from '../videoLink/VideoLink';
+import VideoDuration from '../videoDuration/VideoDuration';
+import ChannelLink from '../channelLink/ChannelLink';
 
 export default class VideoList extends React.Component {
 	prepareData(videos) {
 		return videos.map(({ video, channel }) => {
 			return [
-				<a href={video.id}>{video.title}</a>,
-				<p>{video.duration}</p>,
-				<a href={channel.id}>{channel.name}</a>,
+				<VideoLink video={video} />,
+				<VideoDuration video={video} />,
+				<ChannelLink channel={channel} />,
 			];
 		});
 	}
