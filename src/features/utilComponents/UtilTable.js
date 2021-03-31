@@ -5,9 +5,9 @@ export default class UtilTable extends React.Component {
 		return Object.keys(this.props.data[0]);
 	}
 
-	renderRow(object, keys) {
+	renderRow(object, keys, rowIndex) {
 		return (
-			<tr>
+			<tr key={rowIndex}>
 				{keys.map((key, i) => (
 					<td key={i}>{object[key]}</td>
 				))}
@@ -16,7 +16,7 @@ export default class UtilTable extends React.Component {
 	}
 
 	renderHeaderRow() {
-		return this.props.headers.map((header) => <th>{header}</th>);
+		return this.props.headers.map((header, i) => <th key={i}>{header}</th>);
 	}
 
 	renderTHeadAndTFoot() {
@@ -32,7 +32,7 @@ export default class UtilTable extends React.Component {
 	renderTBody(keys) {
 		return (
 			<tbody>
-				{this.props.data.map((row) => this.renderRow(row, keys))}
+				{this.props.data.map((row, i) => this.renderRow(row, keys, i))}
 			</tbody>
 		);
 	}
