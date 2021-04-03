@@ -5,6 +5,7 @@ import VideoList from '../videoList/VideoList';
 import ChannelContainer from '../channelContainer/ChannelContainer';
 
 import { setVideoList } from './videoSlice';
+import { setChannelList } from '../channelContainer/channelSlice';
 
 const processInput = (videoData) => {
 	if (!videoData) {
@@ -42,10 +43,11 @@ export default function VideoContainer(props) {
 	}
 	const { videos, channels } = processedInputs;
 	dispatch(setVideoList(videos));
+	dispatch(setChannelList(channels));
 	return (
 		<>
 			<VideoList />
-			<ChannelContainer channels={channels} />
+			<ChannelContainer />
 		</>
 	);
 }
