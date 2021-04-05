@@ -20,13 +20,13 @@ export default function ChannelContainer() {
 		</ul>
 	);
 	const multiVideoChannels = useSelector(getMultiVideoChannels).map(
-		([channel, videos]) => {
+		([channel, videos], i) => {
 			return (
-				<section>
+				<section key={i}>
 					<h4>{channel}</h4>
 					<ul>
-						{videos.map((video) => (
-							<li>
+						{videos.map((video, i) => (
+							<li key={i}>
 								<GetVideo videoTitle={video} />
 							</li>
 						))}
