@@ -46,8 +46,8 @@ export default function VideoContainer(props) {
 	dispatch(setChannelList(channels));
 	return (
 		<>
-			<VideoList />
 			<ChannelContainer />
+			<VideoList />
 		</>
 	);
 }

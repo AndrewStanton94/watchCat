@@ -36,58 +36,61 @@ class App extends React.Component {
 					<h1>watchCat</h1>
 					<p>Make sense of your YouTube Watch later list</p>
 				</header>
-				<section>
-					<h2>Set up</h2>
-					<p>
-						You need to add a bookmarklet (a bookmark that runs some
-						code) to your browser. Drag the button to your bookmark
-						bar to save it.
-					</p>
-					<div className="flex flex-center">
-						<a className="button" href={bookmarkletText}>
-							YouTube Watch later bookmarklet
-						</a>
-					</div>
-					<p>
-						I know this isn't an elegant solution but the{' '}
-						<a
-							href="https://developers.google.com/youtube/v3/revision_history#january-28,-2021"
-							rel="no-opener no-referrer"
-						>
-							YouTube API has been broken for a while and will not
-							be fixed.
-						</a>
-					</p>
-				</section>
-				<section>
-					<h2>How this works</h2>
-					<ol>
-						<li>
-							Go to your{' '}
-							<a href="https://www.youtube.com/playlist?list=WL">
-								YouTube Watch later list
+				<div className="flex flex-equal gap-5r">
+					<section>
+						<h2>Set up</h2>
+						<p>
+							You need to add a bookmarklet (a bookmark that runs
+							some code) to your browser. Drag the button to your
+							bookmark bar to save it.
+						</p>
+						<div className="flex flex-center">
+							<a className="button" href={bookmarkletText}>
+								YouTube Watch later bookmarklet
 							</a>
-						</li>
-						<li>
-							Scroll down to the bottom of the page. This ensures
-							all the videos are loaded.
-						</li>
-						<li>
-							Then click the bookmarklet link. The code looks at
-							all the URLs in the list to find the:
-							<ul>
-								<li>Video link</li>
-								<li>Video Name</li>
-								<li>Video duration</li>
-								<li>Channel</li>
-							</ul>
-						</li>
+						</div>
+						<p>
+							I know this isn't an elegant solution but the{' '}
+							<a
+								href="https://developers.google.com/youtube/v3/revision_history#january-28,-2021"
+								rel="no-opener no-referrer"
+							>
+								YouTube API has been broken for a while and will
+								not be fixed.
+							</a>
+						</p>
+					</section>
+					<section>
+						<h2>How this works</h2>
+						<ol>
+							<li>
+								Go to your{' '}
+								<a href="https://www.youtube.com/playlist?list=WL">
+									YouTube Watch later list
+								</a>
+							</li>
+							<li>
+								Scroll down to the bottom of the page. This
+								ensures all the videos are loaded.
+							</li>
+							<li>
+								Then click the bookmarklet link. The code looks
+								at all the URLs in the list to find the:
+								<ul>
+									<li>Video link</li>
+									<li>Video Name</li>
+									<li>Video duration</li>
+									<li>Channel</li>
+								</ul>
+							</li>
 
-						<li>
-							The script opens this app with the video information
-						</li>
-					</ol>
-				</section>
+							<li>
+								The script opens this app with the video
+								information
+							</li>
+						</ol>
+					</section>
+				</div>
 				<VideoContainer videos={this.state.hash} />
 			</div>
 		);
