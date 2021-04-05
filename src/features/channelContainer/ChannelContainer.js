@@ -14,7 +14,7 @@ export default function ChannelContainer() {
 	return (
 		<section>
 			<h2>Your Channels</h2>
-			<div className="flex flex-40pc">
+			<div className="flex flex-equal gap-5r">
 				<div>
 					<h3>Channels with only one video</h3>
 					<div>{listRender(oneVideoChannels, '0')}</div>

@@ -84,8 +84,12 @@ tfoot th {
 	display: flex;
 }
 
-.flex-40pc > * {
-	flex-basis: 40%;
+.flex-equal > * {
+	flex-basis: 100%;
+}
+
+.gap-5r {
+	gap: 5rem;
 }
 
 .flex-center {
