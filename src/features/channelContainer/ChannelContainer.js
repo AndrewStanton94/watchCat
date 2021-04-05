@@ -10,8 +10,8 @@ export default function ChannelContainer() {
 		<ul>
 			{useSelector(getOneVideoChannels).map(
 				([channelName, videoTitle], i) => (
-					<li>
-						<GetVideo videoTitle={videoTitle[0]} key={i}>
+					<li key={i}>
+						<GetVideo videoTitle={videoTitle[0]}>
 							<span>by {channelName}</span>
 						</GetVideo>
 					</li>
@@ -35,7 +35,6 @@ export default function ChannelContainer() {
 			);
 		}
 	);
-	console.log(multiVideoChannels);
 
 	return (
 		<section>
