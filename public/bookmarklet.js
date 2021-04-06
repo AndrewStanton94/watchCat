@@ -70,8 +70,45 @@
 		extractData(videoLinks);
 	}
 
-	const payload = JSON.stringify(videoData);
+	const payload = JSON.stringify(videoData.slice(0, 174));
+	const remainingVideos = JSON.stringify(videoData.slice(174));
 	const baseURL = 'http://localhost:3000/';
 	const redirectURL = [baseURL, '#', payload].join('');
 	window.open(redirectURL, '_blank');
+
+	if (remainingVideos.length) {
+		const styling = document.createElement('link');
+		styling.href = 'http://localhost:3000/bookmarklet.css';
+		styling.rel = 'stylesheet';
+		document.querySelector('body').append(styling);
+
+		const modal = document.createElement('div');
+		const container = document.createElement('div');
+		const h1 = document.createElement('h1');
+		const p = document.createElement('p');
+		const copyButton = document.createElement('button');
+		const closeButton = document.createElement('button');
+
+		modal.id = 'bookmarkModal';
+		h1.innerText = 'You have a lot of videos to watch';
+		p.innerText = `There are too many to load into the app automatically. Please use the button below to copy the remaining videos and paste them into the app.`;
+
+		copyButton.innerText = 'Copy the rest of your videos';
+		copyButton.addEventListener('click', (e) => {
+			navigator.clipboard
+				.writeText(remainingVideos)
+				.then(() => (copyButton.innerText = 'Links copied'))
+				.catch((err) => console.warn(err));
+		});
+
+		closeButton.innerText = 'Close';
+		closeButton.addEventListener('click', (e) => {
+			modal.remove();
+			styling.remove();
+		});
+
+		container.append(h1, p, copyButton, closeButton);
+		modal.append(container);
+		document.querySelector('body').append(modal);
+	}
 })();
