@@ -14,6 +14,7 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			hash: undefined,
+			addNewVideosLabel: 'Add new videos',
 		};
 	}
 
@@ -40,6 +41,9 @@ class App extends React.Component {
 				hash: [...this.state.hash, ...newData],
 			});
 			additionalWatchList.value = '';
+			this.setState({
+				addNewVideosLabel: 'Videos added',
+			});
 		} catch (error) {
 			console.warn(error);
 		}
@@ -120,7 +124,7 @@ class App extends React.Component {
 								className="m2"
 							/>
 							<button className="button m2">
-								Add new videos
+								{this.state.addNewVideosLabel}
 							</button>
 						</fieldset>
 					</form>
