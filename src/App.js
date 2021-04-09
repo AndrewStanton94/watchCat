@@ -49,6 +49,15 @@ class App extends React.Component {
 		}
 	}
 
+	loadDataFromClipboard() {
+		const additionalWatchList = document.querySelector(
+			'#additionalWatchList'
+		);
+		navigator.clipboard
+			.readText()
+			.then((data) => (additionalWatchList.value = data));
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -118,6 +127,13 @@ class App extends React.Component {
 							<legend>
 								Paste the rest of your Watch list in here
 							</legend>
+							<button
+								type="button"
+								onClick={this.loadDataFromClipboard}
+								className="button m2"
+							>
+								Load data from the clipboard
+							</button>
 							<textarea
 								id="additionalWatchList"
 								rows="10"
