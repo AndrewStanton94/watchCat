@@ -102,3 +102,15 @@ tfoot th {
 	justify-content: center;
 	align-content: center;
 }
+
+.flex-column {
+	flex-direction: column;
+}
+
+.m2 {
+	margin: 2rem;
+}
+
+.m2 + .m2 {
+	margin-top: 0;
+}

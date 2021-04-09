@@ -29,6 +29,22 @@ class App extends React.Component {
 		}
 	}
 
+	appendNewWatchListItems(e) {
+		e.preventDefault();
+		const additionalWatchList = document.querySelector(
+			'#additionalWatchList'
+		);
+		try {
+			const newData = JSON.parse(additionalWatchList.value);
+			this.setState({
+				hash: [...this.state.hash, ...newData],
+			});
+			additionalWatchList.value = '';
+		} catch (error) {
+			console.warn(error);
+		}
+	}
+
 	render() {
 		return (
 			<div className="App">
@@ -91,6 +107,24 @@ class App extends React.Component {
 						</ol>
 					</section>
 				</div>
+				<section>
+					<h2>Add more videos</h2>
+					<form onSubmit={this.appendNewWatchListItems.bind(this)}>
+						<fieldset className="flex flex-column">
+							<legend>
+								Paste the rest of your Watch list in here
+							</legend>
+							<textarea
+								id="additionalWatchList"
+								rows="10"
+								className="m2"
+							/>
+							<button className="button m2">
+								Add new videos
+							</button>
+						</fieldset>
+					</form>
+				</section>
 				<VideoContainer videos={this.state.hash} />
 			</div>
 		);
