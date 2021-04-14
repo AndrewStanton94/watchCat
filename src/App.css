@@ -111,6 +111,18 @@ tfoot th {
 	margin: 2rem;
 }
 
+.mv2 {
+	margin: 2rem 0;
+}
+
+.mb1 {
+	margin-bottom: 1rem;
+}
+
 .m2 + .m2 {
 	margin-top: 0;
+}
+
+.inline {
+	display: inline;
 }
