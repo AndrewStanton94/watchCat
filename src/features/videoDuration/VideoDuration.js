@@ -24,7 +24,7 @@ export default function VideoDuration(props) {
 	return (
 		<>
 			<time dateTime={parseDuration(duration)}>{duration}</time>{' '}
-			{watched && <span aria-label="Watched video">👁</span>}
+			{watched && <span aria-label="Watched video">👁 </span>}
 		</>
 	);
 }

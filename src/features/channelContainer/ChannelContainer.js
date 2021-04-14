@@ -12,7 +12,7 @@ export default function ChannelContainer() {
 				([channelName, videoTitle], i) => (
 					<li key={i}>
 						<GetVideo videoTitle={videoTitle[0]}>
-							<span>by {channelName}</span>
+							<span> by {channelName}</span>
 						</GetVideo>
 					</li>
 				)
