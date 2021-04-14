@@ -31,7 +31,7 @@ export default function ChannelContainer() {
 					<ul>
 						{videos.map((video, i) => (
 							<li key={i}>
-								<GetVideo videoTitle={video} />
+								<GetVideo videoTitle={video} showDuration />
 							</li>
 						))}
 					</ul>
