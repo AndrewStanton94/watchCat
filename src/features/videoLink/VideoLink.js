@@ -6,11 +6,11 @@ function generateLink(id) {
 	return `https://www.youtube.com/watch?v=${id}`;
 }
 
-export function GetVideo(params) {
+export function GetVideo(props) {
 	const { video } = useSelector((state) =>
-		getVideoByName(state, params.videoTitle)
+		getVideoByName(state, props.videoTitle)
 	);
-	return <VideoLink children={params.children} video={video} />;
+	return <VideoLink children={props.children} video={video} />;
 }
 
 export default function VideoLink(props) {
