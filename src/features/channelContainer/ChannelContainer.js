@@ -23,7 +23,7 @@ export default function ChannelContainer() {
 		([channel, videos], i) => {
 			return (
 				<section key={i}>
-					<h4>{channel}</h4>
+					<h4>[x{videos.length}] {channel}</h4>
 					<ul>
 						{videos.map((video, i) => (
 							<li key={i}>
