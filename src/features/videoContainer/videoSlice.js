@@ -20,5 +20,9 @@ export const { setVideoList, addVideos } = videoSlice.actions;
 export const getVideos = (state) => state.videos.videos;
 export const getVideoByName = (state, title) =>
 	state.videos.videos.find(({ video }) => video.title === title);
+export const getVideosWithTitleSubstring = (state, keyword) =>
+	state.videos.videos.filter(({ video }) =>
+		video.title.toLowerCase().includes(keyword)
+	);
 
 export default videoSlice.reducer;
