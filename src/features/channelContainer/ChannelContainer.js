@@ -45,11 +45,11 @@ export default function ChannelContainer() {
 			<h2>Your Channels</h2>
 			<div className="flex flex-equal gap-5r">
 				<div>
-					<h3>Channels with only one video</h3>
+					<h3 className="mt0">Channels with only one video</h3>
 					{oneVideoChannels}
 				</div>
 				<div>
-					<h3>Channels with multiple videos</h3>
+					<h3 className="mt0">Channels with multiple videos</h3>
 					{multiVideoChannels}
 				</div>
 			</div>
