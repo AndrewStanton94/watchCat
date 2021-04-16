@@ -98,6 +98,10 @@ tfoot th {
 	gap: 5rem;
 }
 
+.gap-2r {
+	gap: 2rem;
+}
+
 .flex-center {
 	justify-content: center;
 	align-content: center;
@@ -125,4 +129,9 @@ tfoot th {
 
 .inline {
 	display: inline;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 20ch);
 }
