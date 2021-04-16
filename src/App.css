@@ -84,6 +84,17 @@ tfoot th {
 	background-color: var(--accent);
 	text-decoration: none;
 	font-weight: 700;
+	transition: box-shadow 0.5s, outline 0.5s;
+}
+
+.button:hover,
+.button:focus {
+	box-shadow: 5px 5px 10px var(--col-success);
+}
+
+.button:focus,
+.button:active {
+	outline: var(--col-success) solid 5px;
 }
 
 .flex {
