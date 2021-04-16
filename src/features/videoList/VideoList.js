@@ -22,7 +22,7 @@ export default function VideoList() {
 	const videos = useSelector(getVideos);
 	return (
 		<section>
-			<h2>Your Videos</h2>
+			<h2 id="videos">Your Videos</h2>
 			<UtilTable
 				headers={['Video', 'Duration', 'Channel']}
 				data={prepareData(videos)}

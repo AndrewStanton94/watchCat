@@ -22,6 +22,18 @@ header {
 	padding: 4rem 0 0;
 }
 
+nav {
+	position: sticky;
+	top: 0;
+	background-color: var(--col-dark);
+}
+
+nav p {
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+
 h1,
 h2,
 h3 {
@@ -35,6 +47,7 @@ h1 {
 h2 {
 	font-size: 3rem;
 	margin: 4rem 0 2rem;
+	scroll-margin-top: 7rem;
 }
 
 h3 {
@@ -146,6 +159,14 @@ tfoot th {
 	margin-top: 0;
 }
 
+.p0 {
+	padding: 0;
+}
+
+.p2 {
+	padding: 2rem;
+}
+
 .inline {
 	display: inline;
 }
@@ -153,4 +174,12 @@ tfoot th {
 .grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 20ch);
+}
+
+.list-none {
+	list-style: none;
+}
+
+.justify-evenly {
+	justify-content: space-evenly;
 }

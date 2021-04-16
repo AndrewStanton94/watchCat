@@ -22,7 +22,7 @@ export default function WordFrequency(props) {
 	};
 	return (
 		<section>
-			<h2>Common words from video titles</h2>
+			<h2 id="commonWords">Common words from video titles</h2>
 			<div className="grid gap-2r mb1" onClick={wordClicked}>
 				{wordList.map(([word, count], i) => (
 					<button
