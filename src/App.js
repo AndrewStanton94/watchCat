@@ -73,14 +73,6 @@ class App extends React.Component {
 					</div>
 					<img src="logo.svg" alt="logo" />
 				</header>
-				<nav className="p2" onClick={this.jumpToId}>
-					<ul className="flex list-none justify-evenly p0">
-						<p data-href="#add">Add more videos</p>
-						<p data-href="#commonWords">Common words</p>
-						<p data-href="#channels">Your Channels</p>
-						<p data-href="#videos">Your Videos</p>
-					</ul>
-				</nav>
 				<div className="flex flex-equal gap-5r">
 					<section>
 						<h2>Set up</h2>
@@ -136,6 +128,16 @@ class App extends React.Component {
 						</ol>
 					</section>
 				</div>
+
+				<nav className="p2" onClick={this.jumpToId}>
+					<ul className="flex list-none justify-evenly p0">
+						<p data-href="#add">Add more videos</p>
+						<p data-href="#commonWords">Common words</p>
+						<p data-href="#channels">Your Channels</p>
+						<p data-href="#videos">Your Videos</p>
+					</ul>
+				</nav>
+
 				<section>
 					<h2 id="add">Add more videos</h2>
 					<form onSubmit={this.appendNewWatchListItems.bind(this)}>
