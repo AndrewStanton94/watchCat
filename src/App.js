@@ -27,6 +27,7 @@ class App extends React.Component {
 			this.setState({
 				hash: data,
 			});
+			document.querySelector('body').classList.add('has-data');
 		}
 	}
 
@@ -73,7 +74,7 @@ class App extends React.Component {
 					</div>
 					<img src="logo.svg" alt="logo" />
 				</header>
-				<div className="flex flex-equal gap-5r">
+				<div id="first-run" className="flex flex-equal gap-5r ">
 					<section>
 						<h2>Set up</h2>
 						<p>
@@ -129,41 +130,45 @@ class App extends React.Component {
 					</section>
 				</div>
 
-				<nav className="p2" onClick={this.jumpToId}>
-					<ul className="flex list-none justify-evenly p0">
-						<p data-href="#add">Add more videos</p>
-						<p data-href="#commonWords">Common words</p>
-						<p data-href="#channels">Your Channels</p>
-						<p data-href="#videos">Your Videos</p>
-					</ul>
-				</nav>
+				<div id="data">
+					<nav className="p2" onClick={this.jumpToId}>
+						<ul className="flex list-none justify-evenly p0">
+							<p data-href="#add">Add more videos</p>
+							<p data-href="#commonWords">Common words</p>
+							<p data-href="#channels">Your Channels</p>
+							<p data-href="#videos">Your Videos</p>
+						</ul>
+					</nav>
 
-				<section>
-					<h2 id="add">Add more videos</h2>
-					<form onSubmit={this.appendNewWatchListItems.bind(this)}>
-						<fieldset className="flex flex-column">
-							<legend>
-								Paste the rest of your Watch list in here
-							</legend>
-							<button
-								type="button"
-								onClick={this.loadDataFromClipboard}
-								className="button m2"
-							>
-								Load data from the clipboard
-							</button>
-							<textarea
-								id="additionalWatchList"
-								rows="10"
-								className="m2"
-							/>
-							<button className="button m2">
-								{this.state.addNewVideosLabel}
-							</button>
-						</fieldset>
-					</form>
-				</section>
-				<VideoContainer videos={this.state.hash} />
+					<section>
+						<h2 id="add">Add more videos</h2>
+						<form
+							onSubmit={this.appendNewWatchListItems.bind(this)}
+						>
+							<fieldset className="flex flex-column">
+								<legend>
+									Paste the rest of your Watch list in here
+								</legend>
+								<button
+									type="button"
+									onClick={this.loadDataFromClipboard}
+									className="button m2"
+								>
+									Load data from the clipboard
+								</button>
+								<textarea
+									id="additionalWatchList"
+									rows="10"
+									className="m2"
+								/>
+								<button className="button m2">
+									{this.state.addNewVideosLabel}
+								</button>
+							</fieldset>
+						</form>
+					</section>
+					<VideoContainer videos={this.state.hash} />
+				</div>
 			</div>
 		);
 	}

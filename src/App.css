@@ -183,3 +183,15 @@ tfoot th {
 .justify-evenly {
 	justify-content: space-evenly;
 }
+
+.has-data #first-run {
+	display: none;
+}
+
+#data {
+	display: none;
+}
+
+.has-data #data {
+	display: initial;
+}
