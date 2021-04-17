@@ -1,4 +1,8 @@
 function parseDuration(duration) {
+	if (!duration) {
+		console.debug('No duration on this video');
+		return;
+	}
 	const durationComponents = duration.split(':');
 	let durationString, hours, mins, seconds;
 
