@@ -66,9 +66,12 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<header className="App-header">
-					<h1>watchCat</h1>
-					<p>Make sense of your YouTube Watch later list</p>
+				<header className="App-header flex justify-evenly">
+					<div className="flex flex-column">
+						<h1>watchCat</h1>
+						<p>Make sense of your YouTube Watch later list</p>
+					</div>
+					<img src="logo.svg" alt="logo" />
 				</header>
 				<nav className="p2" onClick={this.jumpToId}>
 					<ul className="flex list-none justify-evenly p0">
