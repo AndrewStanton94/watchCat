@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#bookmarkModal {
+	position: fixed;
+	inset: 0;
+	background-color: #666;
+	z-index: 3000; /*Seen z-index of 2019*/
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#bookmarkModal > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	max-width: 80ch;
+}
+
+#bookmarkModal h1 {
+	margin-bottom: 4rem;
+	font-size: 4rem;
+}
+
+#bookmarkModal p {
+	font-size: 2rem;
+}
+
+#bookmarkModal button {
+	margin: 2rem 2rem 2rem;
+	padding: 2rem;
+	font-size: 2rem;
+	cursor: pointer;
+}
