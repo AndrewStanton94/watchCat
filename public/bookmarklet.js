@@ -72,13 +72,13 @@
 
 	const payload = JSON.stringify(videoData.slice(0, 174));
 	const remainingVideos = JSON.stringify(videoData.slice(174));
-	const baseURL = 'http://localhost:3000/';
+	const baseURL = 'https://andrewstanton94.github.io/watchCat/';
 	const redirectURL = [baseURL, '#', payload].join('');
 	window.open(redirectURL, '_blank');
 
 	if (remainingVideos.length) {
 		const styling = document.createElement('link');
-		styling.href = 'http://localhost:3000/bookmarklet.css';
+		styling.href = `${baseURL}bookmarklet.css`;
 		styling.rel = 'stylesheet';
 		document.querySelector('body').append(styling);
 
