@@ -1,4 +1,15 @@
 (() => {
+	const watchlistURL = 'https://www.youtube.com/playlist?list=WL';
+	if (window.location.href !== watchlistURL) {
+		const goto = window.confirm(
+			'Do you want to go to your YouTube watch list?'
+		);
+		if (goto) {
+			window.open(watchlistURL, '_blank');
+		} else {
+			return;
+		}
+	}
 	// Extract text and URLs from all links in the Watch later list
 	const watchListLinksQueryString =
 		'#contents.style-scope.ytd-playlist-video-list-renderer a';
