@@ -72,7 +72,7 @@ class App extends React.Component {
 						<h1>watchCat</h1>
 						<p>Make sense of your YouTube Watch later list</p>
 					</div>
-					<img src="logo.svg" alt="logo" />
+					<img src="/watchCat/logo.svg" alt="logo" />
 				</header>
 				<div id="first-run" className="flex flex-equal gap-5r ">
 					<section>
