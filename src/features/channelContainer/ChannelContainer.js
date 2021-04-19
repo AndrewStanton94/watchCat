@@ -22,7 +22,7 @@ export default function ChannelContainer() {
 	const multiVideoChannels = useSelector(getMultiVideoChannels).map(
 		([channel, videos], i) => {
 			return (
-				<details open key={i} className="mv2">
+				<details open key={i} className="mv2 multiVideoChannel">
 					<summary className="mb1">
 						<h4 className="inline">
 							[x{videos.length}] {channel}
@@ -40,6 +40,12 @@ export default function ChannelContainer() {
 		}
 	);
 
+	const querySetAttribute = (query, attribute, value) => {
+		document
+			.querySelectorAll(query)
+			.forEach((elem) => (elem[attribute] = value));
+	};
+
 	return (
 		<section>
 			<h2 id="channels">Your Channels</h2>
@@ -50,6 +56,34 @@ export default function ChannelContainer() {
 				</div>
 				<div>
 					<h3 className="mt0">Channels with multiple videos</h3>
+					<div className="flex justify-evenly">
+						<button
+							type="button"
+							className="button m0"
+							onClick={() => {
+								querySetAttribute(
+									'.multiVideoChannel',
+									'open',
+									true
+								);
+							}}
+						>
+							Open all channel lists
+						</button>
+						<button
+							type="button"
+							className="button m0"
+							onClick={() => {
+								querySetAttribute(
+									'.multiVideoChannel',
+									'open',
+									false
+								);
+							}}
+						>
+							Close all channel lists
+						</button>
+					</div>
 					{multiVideoChannels}
 				</div>
 			</div>
