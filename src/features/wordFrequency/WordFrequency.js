@@ -17,6 +17,9 @@ export default function WordFrequency(props) {
 	const wordList = curateWordList(words, blockList, t);
 	const [activeWord, updateWord] = useState(wordList[0][0]);
 	const wordClicked = ({ target }) => {
+		if (target.nodeName === 'STRONG') {
+			target = target.parentElement;
+		}
 		const { word } = target.dataset;
 		updateWord(word);
 	};
