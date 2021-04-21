@@ -9,7 +9,12 @@ export default function VideosByDuration(props) {
 		<section id="duration">
 			<h2>Videos by duration</h2>
 			{durationList.map(({ video }, i) => (
-				<VideoLink key={i} video={video} showDuration />
+				<VideoLink
+					classes="flex gap-2r first-child-9ch"
+					key={i}
+					video={video}
+					showDuration
+				/>
 			))}
 		</section>
 	);

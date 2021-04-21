@@ -195,3 +195,8 @@ tfoot th {
 .has-data #data {
 	display: initial;
 }
+
+.first-child-9ch > :first-child {
+	width: 9ch;
+	text-align: right;
+}

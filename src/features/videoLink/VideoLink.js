@@ -41,8 +41,8 @@ export default function VideoLink(props) {
 	const { title, id } = props.video;
 	const { showDuration } = props;
 	return (
-		<div>
-			{showDuration && <VideoDuration video={props.video} />}
+		<div className={props.classes}>
+			<span>{showDuration && <VideoDuration video={props.video} />}</span>
 			<a href={generateLink(id)}>{title}</a>
 			{props.children}
 		</div>
