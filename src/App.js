@@ -135,6 +135,7 @@ class App extends React.Component {
 						<ul className="flex list-none justify-evenly p0">
 							<p data-href="#add">Add more videos</p>
 							<p data-href="#commonWords">Common words</p>
+							<p data-href="#duration">Videos by duration</p>
 							<p data-href="#channels">Your Channels</p>
 							<p data-href="#videos">Your Videos</p>
 						</ul>

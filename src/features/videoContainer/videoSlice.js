@@ -24,5 +24,14 @@ export const getVideosWithTitleSubstring = (state, keyword) =>
 	state.videos.videos.filter(({ video }) =>
 		video.title.toLowerCase().includes(keyword)
 	);
+export const getVideosByDuration = (state) =>
+	/* Sort into ascending order, NaN values filtered */
+	state.videos.videos
+		.filter(({ video }) => !isNaN(video.durationInSeconds))
+		.sort(({ video: video1 }, { video: video2 }) => {
+			const { durationInSeconds: d1 } = video1;
+			const { durationInSeconds: d2 } = video2;
+			return d1 - d2;
+		});
 
 export default videoSlice.reducer;

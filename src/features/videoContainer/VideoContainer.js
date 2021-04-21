@@ -2,11 +2,25 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import WordFrequency from '../wordFrequency/WordFrequency';
+import VideosByDuration from '../videosByDuration/VideosByDuration';
 import VideoList from '../videoList/VideoList';
 import ChannelContainer from '../channelContainer/ChannelContainer';
 
 import { setVideoList } from './videoSlice';
 import { setChannelList } from '../channelContainer/channelSlice';
+
+const videoDurationInSeconds = ({ duration: durationString }) => {
+	if (!durationString) {
+		// If no duration was included
+		return NaN;
+	}
+	// Order reversed to make the format consistent
+	const [sec, mins, hours] = durationString.split(':').reverse();
+	let duration = parseInt(sec);
+	duration += parseInt(mins) * 60;
+	duration += hours ? parseInt(hours) * 3600 : 0;
+	return duration;
+};
 
 const processInput = (videoData) => {
 	if (!videoData) {
@@ -22,6 +36,7 @@ const processInput = (videoData) => {
 		const channelNames = Object.keys(channels);
 		const { video, channel } = current;
 		const { title } = video;
+		const durationInSeconds = videoDurationInSeconds(video);
 		const { name } = channel;
 		if (channelNames.includes(name)) {
 			channels[name].push(title);
@@ -39,7 +54,7 @@ const processInput = (videoData) => {
 		}
 
 		acc.channels = channels;
-		acc.videos.push(current);
+		acc.videos.push({ video: { ...video, durationInSeconds }, channel });
 		acc.wordFreq = wordFreq;
 		return acc;
 	}, initialValue);
@@ -59,6 +74,7 @@ export default function VideoContainer(props) {
 	return (
 		<>
 			<WordFrequency words={wordFreq} />
+			<VideosByDuration />
 			<ChannelContainer />
 			<VideoList />
 		</>
