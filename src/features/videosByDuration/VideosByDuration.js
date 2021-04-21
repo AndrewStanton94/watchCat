@@ -8,8 +8,8 @@ export default function VideosByDuration(props) {
 	return (
 		<section id="duration">
 			<h2>Videos by duration</h2>
-			{durationList.map(({ video }) => (
-				<VideoLink video={video} showDuration />
+			{durationList.map(({ video }, i) => (
+				<VideoLink key={i} video={video} showDuration />
 			))}
 		</section>
 	);
