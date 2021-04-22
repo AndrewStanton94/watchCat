@@ -64,11 +64,32 @@ const processInput = (videoData) => {
 
 export default function VideoContainer(props) {
 	const dispatch = useDispatch();
+
+	// Process fresh data
 	const processedInputs = processInput(props.videos);
-	if (!processedInputs) {
+
+	// Check for saved data
+	const jsonVideo = localStorage.getItem('videos');
+	const jsonChannels = localStorage.getItem('channels');
+	const jsonWordFreq = localStorage.getItem('wordFreq');
+
+	// Bail if no data
+	if (!processedInputs && !(jsonVideo && jsonChannels && jsonWordFreq)) {
 		return null;
 	}
-	const { videos, channels, wordFreq } = processedInputs;
+
+	// Reference fresh data, default to previous
+	const videos = processedInputs?.videos ?? JSON.parse(jsonVideo);
+	const channels = processedInputs?.channels ?? JSON.parse(jsonChannels);
+	const wordFreq = processedInputs?.wordFreq ?? JSON.parse(jsonWordFreq);
+
+	// Save any fresh data
+	if (processedInputs) {
+		localStorage.setItem('videos', JSON.stringify(videos));
+		localStorage.setItem('channels', JSON.stringify(channels));
+		localStorage.setItem('wordFreq', JSON.stringify(wordFreq));
+	}
+
 	dispatch(setVideoList(videos));
 	dispatch(setChannelList(channels));
 	return (
