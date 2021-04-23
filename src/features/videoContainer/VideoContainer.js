@@ -92,6 +92,8 @@ export default function VideoContainer(props) {
 
 	dispatch(setVideoList(videos));
 	dispatch(setChannelList(channels));
+	document.querySelector('body').classList.add('has-data');
+
 	return (
 		<>
 			<WordFrequency words={wordFreq} />

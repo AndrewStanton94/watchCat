@@ -27,7 +27,6 @@ class App extends React.Component {
 			this.setState({
 				hash: data,
 			});
-			document.querySelector('body').classList.add('has-data');
 		}
 	}
 
