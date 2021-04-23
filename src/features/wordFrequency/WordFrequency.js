@@ -15,7 +15,7 @@ export default function WordFrequency(props) {
 	const { words } = props;
 	const t = 10;
 	const wordList = curateWordList(words, blockList, t);
-	const [activeWord, updateWord] = useState(wordList[0][0]);
+	const [activeWord, updateWord] = useState(wordList?.[0]?.[0] ?? '');
 	const wordClicked = ({ target }) => {
 		if (target.nodeName === 'STRONG') {
 			target = target.parentElement;
