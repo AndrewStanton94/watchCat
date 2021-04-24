@@ -1,3 +1,11 @@
+:root {
+	--col-dark: #453944;
+	--col-light: #e0dad3;
+	--col-accent: #a3d9ff;
+	--col-success: #c8eab3;
+	--col-warn: #fbc993;
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -6,11 +14,12 @@
 #bookmarkModal {
 	position: fixed;
 	inset: 0;
-	background-color: #666;
 	z-index: 3000; /*Seen z-index of 2019*/
 	display: flex;
 	justify-content: center;
 	align-content: center;
+	background-color: var(--col-dark);
+	color: var(--col-light);
 }
 
 #bookmarkModal > div {
@@ -23,7 +32,8 @@
 
 #bookmarkModal h1 {
 	margin-bottom: 4rem;
-	font-size: 4rem;
+	font-size: 6rem;
+	color: var(--accent);
 }
 
 #bookmarkModal p {
@@ -31,8 +41,27 @@
 }
 
 #bookmarkModal button {
-	margin: 2rem 2rem 2rem;
-	padding: 2rem;
+	margin: 2rem 0;
+	padding: 1rem 2rem;
 	font-size: 2rem;
 	cursor: pointer;
+	color: var(--col-dark);
+	background-color: var(--col-accent);
+	text-decoration: none;
+	font-weight: 700;
+	transition: box-shadow 0.5s, outline 0.5s;
+}
+
+#bookmarkModal button.close {
+	background-color: var(--col-warn);
+}
+
+#bookmarkModal button:hover,
+#bookmarkModal button:focus {
+	box-shadow: 5px 5px 10px var(--col-success);
+}
+
+#bookmarkModal button:focus,
+#bookmarkModal button:active {
+	outline: var(--col-success) solid 5px;
 }
