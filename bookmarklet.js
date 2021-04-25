@@ -114,6 +114,7 @@
 		});
 
 		closeButton.innerText = 'Close';
+		closeButton.classList.add('close')
 		closeButton.addEventListener('click', (e) => {
 			modal.remove();
 			styling.remove();
