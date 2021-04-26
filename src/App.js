@@ -82,7 +82,7 @@ class App extends React.Component {
 							bookmark bar to save it.
 						</p>
 						<div className="flex flex-center">
-							<a className="button" href={bookmarkletText}>
+							<a className="button" data-testid="saveBookmarklet" href={bookmarkletText}>
 								YouTube Watch later bookmarklet
 							</a>
 						</div>
