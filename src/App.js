@@ -68,10 +68,16 @@ class App extends React.Component {
 			<div className="App">
 				<header className="App-header flex justify-evenly">
 					<div className="flex flex-column">
-						<h1>watchCat</h1>
+						<h1>
+							<a href="https://andrewstanton94.github.io/watchCat/">
+								watchCat
+							</a>
+						</h1>
 						<p>Make sense of your YouTube Watch later list</p>
 					</div>
-					<img src="/watchCat/logo.svg" alt="logo" />
+					<a href="https://andrewstanton94.github.io/watchCat/">
+						<img src="/watchCat/logo.svg" alt="logo" />
+					</a>
 				</header>
 				<div id="first-run" className="flex flex-equal gap-5r ">
 					<section>
@@ -82,7 +88,11 @@ class App extends React.Component {
 							bookmark bar to save it.
 						</p>
 						<div className="flex flex-center">
-							<a className="button" data-testid="saveBookmarklet" href={bookmarkletText}>
+							<a
+								className="button"
+								data-testid="saveBookmarklet"
+								href={bookmarkletText}
+							>
 								YouTube Watch later bookmarklet
 							</a>
 						</div>

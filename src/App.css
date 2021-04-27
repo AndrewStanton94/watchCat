@@ -22,6 +22,11 @@ header {
 	padding: 4rem 0 0;
 }
 
+header h1 a {
+	text-decoration: none;
+	color: inherit;
+}
+
 nav {
 	position: sticky;
 	top: 0;
