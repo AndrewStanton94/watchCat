@@ -1,13 +1,7 @@
 import React from 'react';
 import './App.css';
 import VideoContainer from './features/videoContainer/VideoContainer';
-import linkText from './bookmarklet.js';
-
-const bookmarkletText = `
-javascript:( function(){
-	${linkText}
-})();
-`.replace(/\\n|\\t/, '');
+import bookmarkletLinkSrc from './bookmarklet.js';
 
 class App extends React.Component {
 	constructor(props) {
@@ -87,15 +81,12 @@ class App extends React.Component {
 							some code) to your browser. Drag the button to your
 							bookmark bar to save it.
 						</p>
-						<div className="flex flex-center">
-							<a
-								className="button"
-								data-testid="saveBookmarklet"
-								href={bookmarkletText}
-							>
-								YouTube Watch later bookmarklet
-							</a>
-						</div>
+						<div
+							className="flex flex-center"
+							dangerouslySetInnerHTML={{
+								__html: bookmarkletLinkSrc,
+							}}
+						></div>
 						<p>
 							I know this isn't an elegant solution but the{' '}
 							<a
