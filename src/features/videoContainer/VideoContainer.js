@@ -46,7 +46,7 @@ const processInput = (videoData) => {
 
 		const titleWords = title
 			.toLowerCase()
-			.replaceAll(/[+?|~/()!,[\]—:]|\s-\s|\.+/g, ' ')
+			.replace(/[+?|~/()!,[\]—:]|\s-\s|\.+/g, ' ')
 			.split(' ');
 		for (const word of titleWords) {
 			const count = wordFreq[word] || 0;
