@@ -23,7 +23,7 @@ export default function ChannelContainer() {
 		([channel, videos], i) => {
 			return (
 				<details open key={i} className="mv2 multiVideoChannel">
-					<summary className="mb1">
+					<summary className="mb1 pointer">
 						<h4 className="inline">
 							[x{videos.length}] {channel}
 						</h4>

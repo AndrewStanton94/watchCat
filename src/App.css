@@ -102,6 +102,7 @@ tfoot th {
 	background-color: var(--accent);
 	text-decoration: none;
 	font-weight: 700;
+	cursor: pointer;
 	transition: box-shadow 0.5s, outline 0.5s;
 }
 
@@ -204,4 +205,8 @@ tfoot th {
 .first-child-9ch > :first-child {
 	width: 9ch;
 	text-align: right;
+}
+
+.pointer {
+	cursor: pointer;
 }
