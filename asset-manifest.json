@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/watchCat/static/css/main.f351aa0c.chunk.css",
-    "main.js": "/watchCat/static/js/main.aa133c43.chunk.js",
-    "main.js.map": "/watchCat/static/js/main.aa133c43.chunk.js.map",
+    "main.css": "/watchCat/static/css/main.e5f9a8e5.chunk.css",
+    "main.js": "/watchCat/static/js/main.f26fc07b.chunk.js",
+    "main.js.map": "/watchCat/static/js/main.f26fc07b.chunk.js.map",
     "runtime-main.js": "/watchCat/static/js/runtime-main.53cbaca8.js",
     "runtime-main.js.map": "/watchCat/static/js/runtime-main.53cbaca8.js.map",
     "static/js/2.66b99c61.chunk.js": "/watchCat/static/js/2.66b99c61.chunk.js",
     "static/js/2.66b99c61.chunk.js.map": "/watchCat/static/js/2.66b99c61.chunk.js.map",
     "index.html": "/watchCat/index.html",
-    "static/css/main.f351aa0c.chunk.css.map": "/watchCat/static/css/main.f351aa0c.chunk.css.map",
+    "static/css/main.e5f9a8e5.chunk.css.map": "/watchCat/static/css/main.e5f9a8e5.chunk.css.map",
     "static/js/2.66b99c61.chunk.js.LICENSE.txt": "/watchCat/static/js/2.66b99c61.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.53cbaca8.js",
     "static/js/2.66b99c61.chunk.js",
-    "static/css/main.f351aa0c.chunk.css",
-    "static/js/main.aa133c43.chunk.js"
+    "static/css/main.e5f9a8e5.chunk.css",
+    "static/js/main.f26fc07b.chunk.js"
   ]
 }
