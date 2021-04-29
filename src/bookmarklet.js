@@ -3,7 +3,7 @@ const bookmarkletLinkSrc = `<a
 	data-testid="saveBookmarklet"
 	href="javascript:( function(){
 		const sc = document.createElement('script');
-		sc.src = 'https://andrewstanton94.github.io/watchCat/bookmarklet.js';
+		sc.src = 'https://watchcat.andrewstanton.tech/bookmarklet.js';
 		document.querySelector('head').append(sc);
 	})();"
 >

@@ -63,14 +63,14 @@ class App extends React.Component {
 				<header className="App-header flex justify-evenly">
 					<div className="flex flex-column">
 						<h1>
-							<a href="https://andrewstanton94.github.io/watchCat/">
+							<a href="https://watchcat.andrewstanton.tech/">
 								watchCat
 							</a>
 						</h1>
 						<p>Make sense of your YouTube Watch later list</p>
 					</div>
-					<a href="https://andrewstanton94.github.io/watchCat/">
-						<img src="/watchCat/logo.svg" alt="logo" />
+					<a href="https://watchcat.andrewstanton.tech/">
+						<img src="/logo.svg" alt="logo" />
 					</a>
 				</header>
 				<div id="first-run" className="flex flex-equal gap-5r ">

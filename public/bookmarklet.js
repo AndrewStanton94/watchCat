@@ -83,7 +83,7 @@
 
 	const payload = JSON.stringify(videoData.slice(0, 174));
 	const remainingVideos = JSON.stringify(videoData.slice(174));
-	const baseURL = 'https://andrewstanton94.github.io/watchCat/';
+	const baseURL = 'https://watchcat.andrewstanton.tech/';
 	const redirectURL = [baseURL, '#', payload].join('');
 	window.open(redirectURL, '_blank');
 
